@@ -1,0 +1,60 @@
+/* Основні стилі для сторінки */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стилізація заголовка */
+header {
+    background-color: #d69191;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Стилізація заголовків */
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+h2 {
+    color: #4CAF50;
+    margin-top: 20px;
+}
+
+/* Стилізація абзаців */
+p {
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+/* Стилізація списків */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    color: inherit;
+}
+
+.variant-section {
+    /* Hex-колір */
+    color: #333333;
+    
+    /* Вирівнювання */
+    text-align: right;
+    
+    /* Відступи у px */
+    padding: 3px;
+    
+    /* Додатковий фон для візуального виділення секції, щоб було краще видно межі */
+    background-color: #e4e4e4;
+    border-radius: 8px;
+    margin: 20px 0;
+}
