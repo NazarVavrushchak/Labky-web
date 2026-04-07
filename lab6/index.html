@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Форма для реєстрації користувача</title>
+</head>
+
+<body>
+    <main>
+        <h2>Реєстрація користувача</h2>
+        <form id="registration-form">
+
+            <div class="form-group">
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name" placeholder="Введіть ваше ім'я">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль (мінімум 6 символів):</label>
+                <input type="password" id="password" name="password" placeholder="Введіть пароль">
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Підтвердження пароля:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторіть пароль">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Вік (10+):</label>
+                <input type="number" id="age" name="age" placeholder="Введіть ваш вік">
+            </div>
+
+            <div class="form-group">
+                <label for="group">Група студентів:</label>
+                <select id="group" name="group">
+                    <option value="">-- Оберіть групу --</option>
+                    <option value="КН21">КН21</option>
+                    <option value="КН22СП">КН22СП</option>
+                </select>
+            </div>
+
+            <div id="errorMessages" class="errors-box"></div>
+
+            <button type="submit" id="submit-button">Зареєструватися</button>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const errorContainer = document.getElementById('errorMessages');
+            errorContainer.innerHTML = '';
+            let errors = [];
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const age = parseInt(document.getElementById('age').value, 10);
+            const group = document.getElementById('group').value;
+
+            if (name === "") {
+                errors.push("Поле 'Ім'я' є обов'язковим для заповнення.");
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                errors.push("Будь ласка, введіть коректний Email.");
+            }
+
+            if (password.length < 6) {
+                errors.push("Пароль має містити щонайменше 6 символів.");
+            }
+
+            if (password !== confirmPassword || confirmPassword === "") {
+                errors.push("Паролі не збігаються!");
+            }
+
+            if (isNaN(age) || age < 10) {
+                errors.push("Ваш вік повинен бути не менше 10 років.");
+            }
+
+            if (group === "") {
+                errors.push("Будь ласка, оберіть вашу групу зі списку.");
+            }
+
+            if (errors.length > 0) {
+                errorContainer.innerHTML = errors.join('<br>');
+                errorContainer.style.display = 'block';
+            } else {
+                errorContainer.style.display = 'none';
+                alert("Реєстрація успішна!");
+                this.reset();
+            }
+
+        });
+    </script>
+</body>
+
+</html>
