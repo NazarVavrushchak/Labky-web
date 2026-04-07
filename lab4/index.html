@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабка 4 Вступ до JS</title>
+</head>
+
+<body>
+    <h1>Лабораторна робота 4(вступ до JS)</h1>
+    <script>
+        // завдання 1
+        console.log("Завдання 1.");
+        let username = prompt("Введіть ваше ім'я:");
+        let syaHello = `Привіт, ${username}! Радий тебе бачити!`;
+        alert(syaHello);
+        console.log(syaHello);
+
+        // завдання 2
+        console.log("Завдання 2.");
+        let firstNumber = parseFloat(prompt("Введіть перше число:"));
+        let secondNumber = parseFloat(prompt("Введіть друге число:"));
+        let doubutok = firstNumber * secondNumber;
+        let fraction = firstNumber / secondNumber;
+        alert(`Добуток: ${doubutok}\nЧастка: ${fraction}`);
+        console.log(`Добуток: ${doubutok}`);
+        console.log(`Частка: ${fraction}`);
+
+        // завдання 3
+        console.log("Завдання 3.");
+
+        let birthYearStr = prompt("Введіть ваш рік народження:");
+        let birthYear = parseFloat(birthYearStr);
+
+        const currentYear = 2026;
+        const myAge = 20;
+
+        if (!isNaN(birthYear)) {
+            let userAge = currentYear - birthYear;
+
+            let ageDiff = Math.abs(userAge - myAge);
+
+            let ageMessage = "Ваш поточний вік: " + userAge + " років.\n";
+
+            if (userAge > myAge) {
+                ageMessage += "Користувач старший на " + ageDiff + " років.";
+            } else if (userAge < myAge) {
+                ageMessage += "Користувач молодший на " + ageDiff + " роки.";
+            } else {
+                ageMessage += "Ми з вами однолітки!";
+            }
+
+            alert(ageMessage);
+            console.log(ageMessage);
+        } else {
+            alert("Помилка: Будь ласка, введіть коректний рік народження!");
+        }
+    </script>
+</body>
+
+</html>
