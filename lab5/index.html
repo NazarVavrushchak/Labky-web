@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Лабораторна робота 5(JS)</title>
+</head>
+
+<body>
+    <header>
+        <h1>Маніпуляція DOM та обробка подій</h1>
+    </header>
+
+    <main>
+        <section class="task-section">
+            <h2>1. Зміна вмісту елемента</h2>
+            <p id="dynamic-text">Це початковий текст. Натисни кнопку, щоб його змінити.</p>
+            <button id="change-text-btn">Змінити текст</button>
+        </section>
+
+        <section class="task-section">
+            <h2>2. Реакція на курсор</h2>
+            <p id="hover-element" class="interactive-box">Наведи курсор миші</p>
+        </section>
+
+        <section class="task-section">
+            <h2>3. Динамічний список</h2>
+            <ul id="item-list">
+                <li>Елемент 1</li>
+            </ul>
+            <button id="add-item-btn">Додати новий елемент</button>
+            <button id="remove-item-btn" class="danger-btn">Видалити останній</button>
+        </section>
+
+        <section class="task-section individual-task">
+            <h2>4. Індивідуальне завдання</h2>
+            <button id="variant-btn">Натисніть 3 рази</button>
+            <p id="click-counter">Кількість натискань: 0</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Лабораторна робота №5</p>
+    </footer>
+
+    <script>
+        // Завдання 1: міняєм текст після натисканя кнокпи
+        const textElement = document.getElementById('dynamic-text');
+        const changeBtn = document.getElementById('change-text-btn');
+
+        changeBtn.addEventListener('click', function () {
+            textElement.textContent = "Текст успішно змінено";
+            textElement.style.color = "#2980b9";
+        });
+
+        // Завдання 2: змінюєм колір при наведенні
+        const hoverElement = document.getElementById('hover-element');
+        hoverElement.addEventListener('mouseover', function () {
+            hoverElement.style.backgroundColor = "#f39c12";
+            hoverElement.style.color = "#fff";
+        });
+        hoverElement.addEventListener('mouseout', function () {
+            hoverElement.style.backgroundColor = "#ecf0f1";
+            hoverElement.style.color = "#333";
+        });
+
+        // Завдання 3: додаєм та видаляєм елементи списку
+        const itemList = document.getElementById('item-list');
+        const addBtn = document.getElementById('add-item-btn');
+        const removeBtn = document.getElementById('remove-item-btn');
+        let itemCounter = 1;
+
+        // Додавання
+        addBtn.addEventListener('click', function () {
+            itemCounter++;
+            const newLi = document.createElement('li'); // Створюємо новий вузол
+            newLi.textContent = `Елемент ${itemCounter}`;
+            itemList.appendChild(newLi); // Додаємо вузол в кінець списку
+        });
+
+        // Видалення
+        removeBtn.addEventListener('click', function () {
+            if (itemList.lastElementChild) {
+                itemList.removeChild(itemList.lastElementChild); // Видаляємо останній вузол
+                itemCounter = Math.max(0, itemCounter - 1);
+            } else {
+                alert("Список порожній, видаляти нічого!");
+            }
+        });
+
+        let clickCount = 0;
+        const variantBtn = document.getElementById('variant-btn');
+        const clickCounter = document.getElementById('click-counter');
+
+        variantBtn.addEventListener('click', function () {
+            clickCount++;
+            clickCounter.textContent = `Кількість натискань: ${clickCount}`;
+
+            if (clickCount === 3) {
+                alert("Назар Ваврущак варіант номер 3!");
+                clickCount = 0;
+                counterDisplay.textContent = `Кількість натискань: ${clicks}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
