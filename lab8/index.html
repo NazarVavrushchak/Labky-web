@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лабка 8 - робота з API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>TO DO list</h1>
+
+    <button id="updateBtn">Оновити дані</button>
+    <br><br>
+
+    <div id="formBlock">
+        <h3>Додати нову справу</h3>
+        <form id="addForm">
+            <label>Назва справи: <input type="text" id="titleInput" required></label>
+            <br><br>
+            <label>Статус виконання:
+                <select id="statusInput">
+                    <option value="false">Не виконано</option>
+                    <option value="true">Виконано</option>
+                </select>
+            </label>
+            <br><br>
+            <button type="submit">Добавити</button>
+        </form>
+    </div>
+    <br>
+
+    <table border="1" id="myTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Назва справи</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody id="todosBody">
+
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
