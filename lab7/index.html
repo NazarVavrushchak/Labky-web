@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабка 7: CSS Анімації та Переходи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Візуальні ефекти за допомогою CSS</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Завдання 1: Плавна зміна кольору кнопки</h2>
+            <button class="button">Наведи, щоб помінявся колір</button>
+        </section>
+
+        <section>
+            <h2>Завдання 2: Плавне розгортання блоку</h2>
+            <div class="content-wrapper">
+                <p class="content-title">Наведи курсор, щоб розгорнути текст</p>
+                <div class="content">
+                    <p>Це прихований текст.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Завдання 3: Анімація руху блоку</h2>
+            <div class="box"></div>
+        </section>
+
+        <section>
+            <h2>Індивідуальне завдання</h2>
+            <p>Рух через @keyframes (0.6s). Плавна зміна кольору (0.9s) кожні 3 секунди.</p>
+            <button id="moveBtn">Рухати коло</button>
+            <div class="circle" id="circle"></div>
+        </section>
+    </main>
+
+    <script>
+        const circle = document.getElementById('circle');
+        const moveBtn = document.getElementById('moveBtn');
+
+        moveBtn.addEventListener('click', function () {
+            circle.classList.toggle('move-animation');
+        });
+
+        setInterval(function () {
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            circle.style.backgroundColor = randomColor;
+        }, 3000);
+    </script>
+</body>
+
+</html>
