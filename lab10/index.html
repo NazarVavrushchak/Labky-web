@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazar Vavrushchak - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Nazar Vavrushchak</h1>
+            <p>Java Backend Developer</p>
+            <button id="theme-toggle" class="btn">Switch theme</button>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="section">
+            <h2>About me</h2>
+            <p>I am an enthusiastic and proactive Java Developer with approximately 1 year of hands-on experience in
+                software development, gained through practical experience at SoftServe as a trainee/junior java
+                developer and internship projects. My expertise lies in backend development of web applications using
+                Java, Spring Boot, Hibernate, and PostgreSQL, complemented by familiarity with modern tools like Docker,
+                Maven, and Git. I have worked collaboratively in Scrum teams, contributing to code development, testing,
+                and pull request reviews to ensure high-quality deliverables. With a strong foundation in software
+                engineering from my ongoing education and self-directed learning, I am passionate about exploring new
+                technologies and continuously improving my skills. My personal qualities include being a team player, a
+                quick learner, and an effective communicator, honed through both technical and prior non-technical work
+                experience as a martial arts trainer.</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Backend & Tools</h3>
+                    <ul>
+                        <li>Java, Spring, Maven/Gradle</li>
+                        <li>Hibernate, JPA, jOOQ</li>
+                        <li>REST API, OpenAPI, Postman, Swagger</li>
+                        <li>Mockito/JUnit/AssertJ</li>
+                        <li>PostgreSQL, Flyway</li>
+                        <li>Git, GitHub, Docker, AWS (basic)</li>
+                        <li>HTML, CSS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <h2>Portfolio</h2>
+
+            <div class="portfolio-item">
+                <h3>SoftServe - Translations system</h3>
+                <p>Service used for translating text within the company’s applications. It integrates with a third-party
+                    system that provides translations using a combination of AI, machine, and human input.</p>
+                <p><strong>Responsibilities:</strong> implementing new functionality due to requirements, communication
+                    with managers to clarify details, unit testing, bug fixing.</p>
+            </div>
+
+            <div class="portfolio-item">
+                <h3>SoftServe - GreenCity</h3>
+                <p>A web-based platform designed to foster environmental awareness and encourage sustainable living
+                    within communities. The application empowers users to engage in eco-friendly activities by providing
+                    tools to track personal habits, discover local eco-initiatives, and connect with like-minded
+                    individuals.</p>
+                <p><strong>Responsibilities:</strong> code development, product support and documentation maintenance,
+                    reviewing pull requests, unit testing, requirements analysis and clarification.</p>
+            </div>
+        </section>
+
+        <section id="contacts" class="section">
+            <h2>Contact Me</h2>
+
+            <div class="contact-info" style="margin-bottom: 25px; line-height: 1.8;">
+                <p><strong>Phone:</strong> <a href="tel:+380638178694"
+                        style="color: inherit; text-decoration: none;">(063) 817-86-94</a></p>
+                <p><strong>Email:</strong> <a href="mailto:nazikvaver@gmail.com"
+                        style="color: inherit; text-decoration: none;">nazikvaver@gmail.com</a></p>
+                <p><strong>Location:</strong> Lviv office / remote</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nazar-vavrushchak-8135b1302"
+                        target="_blank" style="color: var(--accent-color); text-decoration: none;">Nazar Vavrushchak</a>
+                </p>
+            </div>
+
+            <p id="welcome-back-msg" style="display: none; color: var(--accent-color); font-weight: bold;"></p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" placeholder="example@mail.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="4" placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nazar Vavrushchak. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
